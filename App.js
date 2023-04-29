@@ -14,7 +14,7 @@ export default function App() {
   }
     const adicionarLembrete = () => {
       setLembretes(lembretes => {
-        const aux = [lembrete, ...lembretes]
+        const aux = [lembrete, ... lembretes]
         setLembrete('')
         return aux
       })
@@ -34,7 +34,9 @@ export default function App() {
           onPress={adicionarLembrete} />
       </View>
       <View>
-        lembretes.map((l) => <View><Text>{l}</Text></View>)
+        {
+        lembretes.map((l) => <View style={styles.itemNaLista}><Text>{l}</Text></View>)
+        }
       </View>
     </View>
   );
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     marginBottom: 4
   },
   itemNaLista:{
-    padding:12,
+    padding: 12,
     borderColor: '#EEE',
     backgroundColor: '#DDD',
     marginBottom: 4,
